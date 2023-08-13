@@ -8,7 +8,7 @@ pipeline{
            stage('Checkout'){
               steps{
 		 echo 'cloning..'
-                 git 'https://github.com/RayItern/JUNECLASSPRO1.git'
+                 git 'https://github.com/Keyzonee/Keyzonee17.git'
               }
           }
           stage('Compile'){
@@ -18,17 +18,6 @@ pipeline{
 	      }
           }
          
-           stage('UnitTest'){
-              steps{
-	         echo 'Testing'
-                  sh 'mvn test'
-              }
-               post {
-               success {
-                   junit 'target/surefire-reports/*.xml'
-               }
-           }	
-          }
           stage('Package'){
               steps{
                   sh 'mvn package'
